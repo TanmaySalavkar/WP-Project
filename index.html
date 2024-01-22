@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics</title>
+    <link rel="stylesheet" href="Navbar/Navbar.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- inserting navbar component -->
+    <div id="navbar"></div>
+    <script>
+        fetch('Navbar/Navbar.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        });
+    </script>
+
+    <main>
+        <aside class="left-sidebar">
+            <div class="sidebar-content">
+
+                <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Find Repositories</h3>
+                <form id="form2" role="search">
+                    <input type="search" id="query" name="q"
+                     placeholder="Search..."
+                     aria-label="Search through site content">
+                    <button><i class="bi bi-search"></i></button>
+                </form>
+                <div class="repo-source">
+                    <ul>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+
+                <div class="repo-creation">
+                    <h4>Lets build a new project!</h4>
+                    <button type="submit" class="repo-btn">Create New Repo</button>
+                </div>
+
+
+                
+            </div>
+        </aside>
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="section">
+            this is the main content
+            <div class="img">
+                <img src="robot-img.png" alt="robot-img" height="350" width="300">
+            </div>
+        </div>
+    </main>
+    
+    
+</body>
+</html>
