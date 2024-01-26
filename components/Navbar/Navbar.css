@@ -22,11 +22,11 @@ body{
 .content{
     display: flex;
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     /* align-items: center; */
 }
 .navbar .navdiv .content nav{
-    width: 100%;
+    width: 0%;
 }
 .logo a{
     font-size: 50px;
@@ -43,7 +43,7 @@ li{
 .home-title{
     color: white;
     font-size: 28px;
-    margin-left: 50%;
+    margin-left: 30%;
     margin-top: 50%;
     align-content: center;
 }

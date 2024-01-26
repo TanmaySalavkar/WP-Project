@@ -1,0 +1,133 @@
+.robots {
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+  }
+  .head,
+  .left_arm,
+  .torso,
+  .right_arm,
+  .left_leg,
+  .right_leg {
+    background-color: #ffffff;
+  }
+  
+  .head {
+    width: 200px;
+    margin: 0 auto;
+    height: 150px;
+    border-radius: 200px 200px 0 0;
+    margin-bottom: 10px;
+  }
+  
+  .eyes {
+    position: relative;
+    top: 100px;
+  }
+  
+  .left_eye,
+  .right_eye {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: rgb(28, 55, 66);
+    display: inline-block;
+  }
+  
+  .left_eye {
+    margin-left: 30px;
+  }
+  
+  .right_eye {
+    margin-left: 100px;
+  }
+  
+  .upper_body {
+    width: 300px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+  }
+  
+  .left_arm,
+  .right_arm {
+    width: 40px;
+    height: 125px;
+    border-radius: 100px;
+    margin-top: 20px;
+  }
+  
+  .left_arm {
+    margin-right: 10px;
+  }
+  
+  .left_arm {
+    margin-right: 10px;
+  }
+  
+  .right_arm {
+    margin-left: 10px;
+  }
+  
+  .torso {
+    width: 200px;
+    height: 200px;
+    border-radius: 0 0 50px 50px;
+    transition: border-radius 1s;
+  }
+  
+  .lower_body {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .left_leg,
+  .right_leg {
+    width: 40px;
+    height: 120px;
+    border-radius: 0 0 100px 100px;
+    display: inline-block;
+  }
+  
+  .left_leg {
+    margin-left: 45px;
+  }
+  
+  .right_leg {
+    margin-left: 30px;
+  } 
+  .robots:hover .left_arm {
+    animation: moveleftarm 1s  forwards;
+  }
+
+  @keyframes moveleftarm {
+    0% {
+      transform: rotate(0deg);
+      transform-origin: top center;
+    }
+  
+    100% {
+      transform: rotate(120deg);
+      transform-origin: top center;
+    }
+  }
+
+  .robots::after{
+    content: "Hello Robot Engineers !!";
+    position: fixed;
+      bottom: 20px;
+      left: 85%;
+      padding-left: 40px;
+      width: 200px;;
+      transform: translateX(-35%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 28px;
+      font-family: sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+  }
+  .robots:hover::after{
+    opacity: 1;
+  }
