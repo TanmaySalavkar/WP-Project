@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics</title>
+    <link rel="stylesheet" href="components/Navbar/Navbar.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="icon" href="components/images/icon.png">
+</head>
+
+<body>
+
+    <!-- inserting navbar component -->
+    <div id="navbar"></div>
+    <script>
+        fetch('components/Navbar/Navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+
+    <div class="profile-picture">
+        <img id="profile-photo" src="components/images/default-profile.jpeg">
+    </div>
+
+    <div class="camera-container">
+        <i class="bi bi-camera"></i>
+        <input type="file" accept="image/*" id="ImageUpload" name="ImageUpload" onchange="changeProfile(this)">
+    </div>
+
+    <div class="user-profile">
+        <p id="Username">Username</p>
+    </div>
+
+    <div class="user-description">
+        <p id="description">Hi i am Tanmay</p>
+    </div>
+
+    <div class="edit-button">
+        <button type="submit" id="edit-profile">Edit Profile</button>
+    </div>
+    <script src="profile.js"></script>
+</body>
+
+</html>
