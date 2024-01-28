@@ -7,7 +7,7 @@
     <title>Robotics</title>
     <link rel="stylesheet" href="/components/Navbar/Navbar.css">
     <link rel="stylesheet" href="css/profile.css">
-    <link rel="icon" href="/components/images/icon.png">
+    <link rel="icon" href="../components/images/icon.png">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <!-- inserting navbar component -->
     <div id="navbar"></div>
     <script>
-        fetch('/components/Navbar/Navbar.html')
+        fetch('../components/Navbar/Navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
@@ -23,7 +23,7 @@
     </script>
 
     <div class="profile-picture">
-        <img id="profile-photo" src="/components/images/default-profile.jpeg">
+        <img id="profile-photo" src="../components/images/default-profile.jpeg">
     </div>
 
     <div class="camera-container">
