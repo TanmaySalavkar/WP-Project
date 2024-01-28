@@ -77,9 +77,28 @@
 
                 <div class="repo-creation">
                     <h3>Lets build a new project!</h3>
-                    <a href="repo_create.html" class="repo-btn" data-target="#login" data-toggle="modal">Create New Repo</a>
+                    <a href="#" id="repo-btn" class="repo-btn" data-target="#login" data-toggle="modal">Create New Repo</a>
                 </div>
 
+                <div class="popup-container" id="popupContainer">
+                    <div class="popup">
+                        <span class="close" onclick="closePopup()">&times;</span>
+
+                        <form id="repo-form">
+                            <h2>Create New Repository</h2>
+                            <label for="repo-name">Username:</label>
+                            <input type="text" disabled id="username" name="username" placeholder="alex">
+
+                            <label for="repo-name">Repository Name:</label>
+                            <input type="text" id="username" name="username">
+                            
+                            <label for="password">Description:</label>
+                            <input type="text" id="password" name="password">
+            
+                            <input type="submit" id="repo-submit"  value="Create New Repo">
+                        </form>
+                    </div>
+                </div>
 
                 
         </aside>
@@ -121,5 +140,20 @@
         </div>
     </main>     
 </div>
+<script>
+    // Function to open the popup
+function openPopup() {
+    document.getElementById("popupContainer").style.display = "block";
+}
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById("popupContainer").style.display = "none";
+}
+
+// Event listener for the login button
+document.getElementById("repo-btn").addEventListener("click", openPopup);
+
+</script>
 </body>
 </html>

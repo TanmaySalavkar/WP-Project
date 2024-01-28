@@ -21,10 +21,11 @@ main{
     display: flex;
     width: 320px;
     /* height: 100%; */
-    border-right: 1px solid rgb(216, 222, 228);
+    /* border-right: 1px solid rgb(216, 222, 228); */
     box-sizing: border-box;
     padding: 20px;
     /* background: linear-gradient(to left, #e9ecee, #adb6bb); ; */
+    box-shadow:5px 0 10px rgba(124, 124, 124, 0.5);
 }
 
 .section{
@@ -33,7 +34,7 @@ main{
 }
 
 #form2 {
-    background-color: 	#3a5768;
+    background-color: rgb(27, 43, 56);
     width: 250px;
     height: 30px;
     border-radius: 25px;
@@ -46,6 +47,17 @@ main{
     border: 1px solid white;
     
   }
+#form2 input{
+    all: unset;
+  font: 16px system-ui;
+  color: #fff;
+  height: 100%;
+  width: 200px;
+  padding: 10px; /* Adjusted padding values */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  /* margin-left: 100%; */
+}
+  
 
 .img{
     display: flex;
@@ -112,7 +124,7 @@ ul{
     height: 20px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #3a5768;
+    background-color: #0074cc;
     color: #fff;
     border: none;
     border-radius: 15px;
@@ -120,7 +132,7 @@ ul{
     transition: background-color 0.3s;
 }
 .repo-btn:hover{
-    background-color: #304857;
+    background-color: #0f537e;
 }
 .repo-creation{
     text-align: center;
@@ -145,6 +157,84 @@ ul{
     font-weight: 100;
     justify-content: space-evenly;
 }
-.popup{
-    width: 400px;
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 1;
 }
+
+.popup {
+    background: linear-gradient(to top left,#4e555c,#192734);
+    width: 500px;
+    height: 400px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ffffff;
+    color: #fff;
+    border-radius: 8px;
+    align-items: center;
+    transition: all .5s;
+}
+
+.popup label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.popup input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    background: transparent;
+}
+#repo-form{
+    align-items: center;
+}
+#repo-form h2{
+    text-align: center;
+}
+.popup input:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+#repo-submit{
+    border: none;
+    color: #fff;
+    background: #0074cc;
+    font-family: sans-serif;
+    font-weight: 300;
+    width: 200px;
+    margin-left: 30%;
+    padding:10px ;
+    margin-top: 10px;
+    border-radius: 25px;
+    /* border: 1px solid #fff; */
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #fff;
+}
+

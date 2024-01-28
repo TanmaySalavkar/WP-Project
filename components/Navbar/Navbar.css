@@ -48,8 +48,8 @@ li{
     align-content: center;
 }
 
-form {
-    background-color: 	#3a5768;
+#search-form {
+    background-color: rgb(48, 56, 63);
     width: 500px;
     height: 44px;
     border-radius: 25px;
@@ -63,7 +63,7 @@ form {
     
   }
   
-  input {
+  #search-form input {
     all: unset;
     font: 16px system-ui;
     color: #fff;
@@ -104,7 +104,7 @@ form {
     width: 40px; 
     height: 40px; 
     border-radius: 50%; 
-    background-color: 	#3a5768;
+    background-color: rgb(48, 56, 63);
     display: flex;
     align-items: center;
     justify-content: center;
