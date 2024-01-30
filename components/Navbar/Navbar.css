@@ -29,14 +29,14 @@ body{
 .navbar .navdiv .content nav{
     width: 0%;
 }
-.logo a{
-    font-size: 50px;
-    color: white;
-    font-weight: 500;
-    font-style: normal;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+.logo a img{
+    height: 50px; 
+    width: 55px;
+    margin-top: 8px;
 }
+
+
+
 li{
     list-style: none;
     display: inline-block;
