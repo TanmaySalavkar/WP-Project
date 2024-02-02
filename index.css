@@ -24,9 +24,12 @@ main{
     /* border-right: 1px solid rgb(216, 222, 228); */
     box-sizing: border-box;
     padding: 20px;
-    /* background: linear-gradient(to left, #e9ecee, #adb6bb); ; */
     box-shadow:5px 0 10px rgba(124, 124, 124, 0.5);
+    transition: top 0.3s ease;
 }
+.left-sidebar .sidebar-content{
+    position: fixed;
+} 
 
 .section{
     flex: 1; /* Allow the main content to take the remaining width */
@@ -148,10 +151,6 @@ ul{
     flex: 0;
     padding: 20px;
     /* background:#f5f7f8; */
-}
-.right-sidebar img{
-    object-fit: cover;
-    animation: highlight 1s infinite;
 }
 .right-sidebar h2{
     padding: 20px;

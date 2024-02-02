@@ -1,0 +1,32 @@
+{
+    "sections":[
+        {
+            "title": "Welcome to My Website",
+            "subtitle": "1. Smart Robot For Face RecognitionA place for awesome content",
+            "paragraphs": [
+                "This article describes how you can design a smart robot that can recognize your face and of other regular visitors. If you go in front of the camera, the robot will recognize your face. It will call out your name and also display your name on the computer screen."
+            ]
+        },
+        
+        {
+            "subtitle": "2. Line Follower Robot Using PID Algorithm",
+            "paragraphs": [
+                "A line follower is a simple robot that follows a thick line drawn on the floor using infrared (IR) or some other optical sensors. This line follower robot uses two motors with wheels on the rear and a castor wheel as support on the front."
+            ]
+        },
+        {
+            "subtitle": "2. Line Follower Robot Using PID Algorithm",
+            "paragraphs": [
+                "A line follower is a simple robot that follows a thick line drawn on the floor using infrared (IR) or some other optical sensors. This line follower robot uses two motors with wheels on the rear and a castor wheel as support on the front."
+            ]
+        },
+        {
+            "subtitle": "3. HMI-Based Robotic Arm",
+            "paragraphs": [
+                "Certain jobs require high precision for which a human hand is needed along with the autonomous robot. In this project, we have developed an HMI type of robotic arm, using which robots can follow and copy the movements of human action."
+            ]
+        }
+    ]
+    
+    
+}

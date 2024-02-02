@@ -21,7 +21,7 @@
     </script>
 
     <main>
-        <aside class="left-sidebar">
+        <aside class="left-sidebar" id="sidebar">
             <div class="sidebar-content">
 
                 <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Find Repositories</h3>
@@ -108,7 +108,19 @@
 
         <div class="section">
             this is the main content
-
+            <div id="contentContainer"></div>
+            <script id="contentTemplate" type="text/x-handlebars-template">
+                {{#each sections}}
+                <div class="section">
+                    <h1>{{title}}</h1>
+                    <h2>{{subtitle}}</h2>
+                    {{#each paragraphs}}
+                        <p>{{this}}</p>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </script> 
+        
             
         </div>
         <div class="right-sidebar">
@@ -116,8 +128,8 @@
                 <img src="components/images/robot-img.png" alt="robot-img" height="350" width="300">
             </div> -->
 
-            <div class="robots">
-                <div class="android"> 
+            <div class="robots" onmouseover="playaudio()" onmouseout="pauseaudio()">
+                <div class="android" > 
                     <div class="head"> 
                         <div class="eyes"> 
                             <div class="left_eye"></div> 
@@ -134,25 +146,15 @@
                         <div class="left_leg"></div> 
                         <div class="right_leg"></div> 
                     </div> 
+                    <audio id="audio" src="components/hello robot engineer.mp3"></audio>
                 </div>
+               
             </div>
         </div>
+        
     </main>     
 </div>
-<script>
-    // Function to open the popup
-function openPopup() {
-    document.getElementById("popupContainer").style.display = "block";
-}
-
-// Function to close the popup
-function closePopup() {
-    document.getElementById("popupContainer").style.display = "none";
-}
-
-// Event listener for the login button
-document.getElementById("repo-btn").addEventListener("click", openPopup);
-
-</script>
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </body>
 </html>
