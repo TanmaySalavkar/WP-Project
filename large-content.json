@@ -1,7 +1,6 @@
 {
     "sections":[
         {
-            "title": "Welcome to My Website",
             "subtitle": "1. Smart Robot For Face RecognitionA place for awesome content",
             "paragraphs": [
                 "This article describes how you can design a smart robot that can recognize your face and of other regular visitors. If you go in front of the camera, the robot will recognize your face. It will call out your name and also display your name on the computer screen."

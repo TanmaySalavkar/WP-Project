@@ -8,8 +8,7 @@ function closePopup() {
 }
 
 // Event listener for the login button
-document.getElementById("repo-btn").addEventListener("click", openPopup);
-
+document.getElementById("repo-btn").addEventListener("click", openPopup); 
 
 
 
@@ -64,4 +63,20 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('contentContainer').innerHTML = template(data);
         })
         .catch(error => console.error('Error fetching content:', error));
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle_btn = document.querySelector('#checkbox');
+    console.log(toggle_btn);
+
+    toggle_btn.addEventListener('change', () => {
+        if (toggle_btn.checked) {
+            console.log('checked');
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    });
 });

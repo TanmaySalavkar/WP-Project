@@ -2,17 +2,19 @@
     font-family: 'Poppins', sans serif;
 }
 body{
-    background-image: url("/components/images/huhh.webp");
+    background: url("/components/images/huhh.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    
 }
 .box{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 90vh;
+    backdrop-filter: blur(5px);
 }
 .container{
     width: 350px;

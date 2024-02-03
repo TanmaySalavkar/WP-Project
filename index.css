@@ -1,15 +1,18 @@
+
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure full viewport height */
-    background: rgb(37, 55, 65)
+    background: var(--bg-main)
   }
 main{
     display: flex;
     flex: 1;
-    color: #fff;
+    color: var(--bg-primary);
 }
 .repo-source{
     width: 300px;
@@ -26,18 +29,46 @@ main{
     padding: 20px;
     box-shadow:5px 0 10px rgba(124, 124, 124, 0.5);
     transition: top 0.3s ease;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
 }
 .left-sidebar .sidebar-content{
     position: fixed;
+    top: 85px;
 } 
 
-.section{
+.main{
     flex: 1; /* Allow the main content to take the remaining width */
       padding: 20px;
+      position: static;
+      margin-top: 50px;
 }
+.about{
+    display: block;
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    /* background: linear-gradient(to bottom left,#4e555c,#192734); */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border: 1px dashed var(--bg-primary);
 
+}
+.about h2{
+    color: var(--bg-btn);
+}
+.project-ideas{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    padding: 0;
+}
+/* #contentContainer{
+    margin-top: 50px;
+} */
 #form2 {
-    background-color: rgb(27, 43, 56);
+    background-color: var(--bg-inputcolor);
     width: 250px;
     height: 30px;
     border-radius: 25px;
@@ -47,20 +78,22 @@ main{
     margin-left: 0%; /* Set to auto to align with the right edge of the container */
     margin-right: 0px; /* Adjust the right margin as needed */
     margin-top: 5px;
-    border: 1px solid white;
+    border: 1px solid var(--bg-primary);
     
   }
 #form2 input{
     all: unset;
   font: 16px system-ui;
-  color: #fff;
+  color: var(--bg-primary);
   height: 100%;
   width: 200px;
   padding: 10px; /* Adjusted padding values */
   box-sizing: border-box; /* Include padding in the width calculation */
   /* margin-left: 100%; */
 }
-  
+#form2 button i{
+    color: var(--bg-primary);
+}
 
 .img{
     display: flex;
@@ -123,14 +156,14 @@ ul{
     scroll-snap-type: y mandatory;
 }
 .repo-source li a{
-    color: #fff;
+    color: var(--bg-primary);
 }
 .repo-btn{
     width: 130px;
     height: 20px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #0074cc;
+    background-color: var(--bg-btn);
     color: #fff;
     border: none;
     border-radius: 15px;
@@ -148,6 +181,7 @@ ul{
 }
 
 .right-sidebar{
+    margin-top: 70px;
     flex: 0;
     padding: 20px;
     /* background:#f5f7f8; */
@@ -181,17 +215,18 @@ ul{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #ffffff;
-    color: #fff;
+    border: 1px solid var(--bg-primary)fff;
+    color: var(--bg-primary);
     border-radius: 8px;
     align-items: center;
     transition: all .5s;
+    z-index: 3;
 }
 
 .popup label {
     display: block;
     margin-bottom: 8px;
-    color: #fff;
+    color: var(--bg-primary);
 }
 
 .popup input {
@@ -200,9 +235,9 @@ ul{
     margin-bottom: 16px;
     border: none;
     box-sizing: border-box;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--bg-primary);
     border-radius: 4px;
-    color: #fff;
+    color: var(--bg-primary);
     background: transparent;
 }
 #repo-form{
@@ -213,12 +248,12 @@ ul{
 }
 .popup input:focus {
     outline: none;
-    border-color: #ffffff;
+    border-color: var(--bg-primary)fff;
 }
 #repo-submit{
     border: none;
-    color: #fff;
-    background: #0074cc;
+    color: var(--bg-primary);
+    background: var(--bg-btn);
     font-family: sans-serif;
     font-weight: 300;
     width: 200px;
@@ -226,7 +261,7 @@ ul{
     padding:10px ;
     margin-top: 10px;
     border-radius: 25px;
-    /* border: 1px solid #fff; */
+    /* border: 1px solid var(--bg-primary); */
 }
 .close {
     color: #aaa;
@@ -237,6 +272,6 @@ ul{
 }
 
 .close:hover {
-    color: #fff;
+    color: var(--bg-primary);
 }
 

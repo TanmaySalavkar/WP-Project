@@ -94,7 +94,7 @@
                             <input type="text" id="username" name="username">
                             
                             <label for="password">Description:</label>
-                            <input type="text" id="password" name="password">
+                            <textarea type="textarea" id="password" name="password"></textarea>
             
                             <input type="submit" id="repo-submit"  value="Create New Repo">
                         </form>
@@ -106,13 +106,32 @@
         
 
 
-        <div class="section">
-            this is the main content
+        <div class="main">
+            <div class="about">
+                
+                    <h2>Our Journey</h2>
+                    <p>UnleashRobotics was founded with a vision to create an inclusive space for robotics enthusiasts of all backgrounds and skill levels...</p>           
+                    <h2>Our Mission</h2>
+                    <p>At UnleashRobotics, our mission is to empower individuals to explore the vast realm of robotics...</p>
+            
+                    <h2>What Sets Us Apart</h2>
+                    <ul>
+                        <li><strong>Open-Source Excellence:</strong> Discover a treasure trove of open-source robot designs contributed by our diverse community...</li>
+                        <li><strong>Collaboration Redefined:</strong> Forge connections with like-minded individuals, form teams, and embark on collaborative projects...</li>
+                        <li><strong>Learning Resources Galore:</strong> Elevate your robotics skills with our rich collection of learning resources...</li>
+                        <li><strong>Project Showcases:</strong> Explore the incredible projects developed by our community members...</li>
+                    </ul>
+            </div>
+
+
+            <div class="project-ideas">
+                <h1>Are you Beginner?</h1>
+                <h3>here are some Robotics project ideas pick up and start a new project</h3>
+            </div>          
             <div id="contentContainer"></div>
             <script id="contentTemplate" type="text/x-handlebars-template">
                 {{#each sections}}
                 <div class="section">
-                    <h1>{{title}}</h1>
                     <h2>{{subtitle}}</h2>
                     {{#each paragraphs}}
                         <p>{{this}}</p>
@@ -146,10 +165,11 @@
                         <div class="left_leg"></div> 
                         <div class="right_leg"></div> 
                     </div> 
-                    <audio id="audio" src="components/hello robot engineer.mp3"></audio>
+                    <audio id="audio" src="robot-voice.mp3"></audio>
                 </div>
                
             </div>
+            <!-- <iframe width="60" height="25" src="https://www.youtube.com/watch?v=RpVUTxE9Bdk" frameborder="0" allowfullscreen></iframe> -->
         </div>
         
     </main>     

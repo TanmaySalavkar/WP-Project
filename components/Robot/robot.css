@@ -9,7 +9,7 @@
   .right_arm,
   .left_leg,
   .right_leg {
-    background-color: #fff;
+    background-color: var(--bg-robocolor);
   }
   
   .head {
@@ -31,7 +31,7 @@
     width: 20px;
     height: 20px;
     border-radius: 15px;
-    background-color: rgb(28, 55, 66);
+    background-color: var(--bg-main);
     display: inline-block;
   }
   
@@ -111,7 +111,7 @@
     }
   }
 
-  .robots::after{
+  /* .robots::after{
     content: "Hello Robot Engineers !!";
     position: fixed;
       bottom: 80px;
@@ -124,8 +124,8 @@
       font-size: 28px;
       font-family: sans-serif;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--bg-primary);
   }
   .robots:hover::after{
     opacity: 1;
-  }
+  } */

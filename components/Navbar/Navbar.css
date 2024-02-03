@@ -1,6 +1,35 @@
 *{
     text-decoration: none;
 }
+/*light mode styles*/
+:root .dark-mode{
+  --bg-main: rgb(247, 247, 247);
+  --bg-primary:black;
+  --bg-btn:rgb(37, 55, 65);
+  --bg-robocolor:rgb(37, 55, 65);
+  --bg-navcolor:rgb(243, 243, 243);
+  --bg-inputcolor:rgb(235, 235, 235);
+}
+body{
+  background: var(--bg-main);
+  color: var(--bg-primary);
+}
+
+
+/*dark mode style*/
+:root{
+  --bg-main: rgb(37, 55, 65);
+  --bg-primary:#fff;
+  --bg-btn:#0074cc;
+  --bg-hightext:#00d9ff;
+  --bg-robocolor:var(--bg-primary);
+  --bg-navcolor:rgb(35,41,46);
+  --bg-inputcolor:rgb(48,56,63);
+}
+
+
+
+
 body{
     background: rgb(250, 248, 248);
     margin: 0;
@@ -9,13 +38,16 @@ body{
 }
 .navbar{
     /* background: 	#334d5c; */
-    background-color: rgb(35,41,46);
+    background-color: var(--bg-navcolor);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 5px;
     box-shadow:10px 0 10px rgba(151, 151, 151, 0.5);
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 .navdiv{
     color: white;
@@ -47,7 +79,7 @@ li{
     display: inline-block;
 }
 .home-title{
-    color: white;
+    color: var(--bg-primary);
     font-size: 28px;
     margin-left: 30%;
     margin-top: 50%;
@@ -55,7 +87,7 @@ li{
 }
 
 #search-form {
-    background-color: rgb(48, 56, 63);
+    background-color: var(--bg-inputcolor);
     width: 480px;
     height: 44px;
     border-radius: 25px;
@@ -65,14 +97,14 @@ li{
     margin-left: 88%; /* Set to auto to align with the right edge of the container */
     margin-right: 5px; /* Adjust the right margin as needed */
     margin-top: 5px;
-    border: 1px solid white;
+    border: 1px solid var(--bg-primary);
     
   }
   
   #search-form input {
     all: unset;
     font: 16px system-ui;
-    color: #fff;
+    color: var(--bg-primary);
     height: 100%;
     width: 200px;
     padding: 10px; /* Adjusted padding values */
@@ -82,7 +114,7 @@ li{
   }
   
   ::placeholder {
-    color: #fff;
+    color: var(--bg-primary);
     opacity: 0.7;
   }
   
@@ -95,7 +127,7 @@ li{
   }
   
   i {
-    color: #fff;
+    color: var(--bg-primary);
     fill: currentColor;
     width: 24px;
     height: 24px;
@@ -110,26 +142,26 @@ li{
     width: 40px; 
     height: 40px; 
     border-radius: 50%; 
-    background-color: rgb(48, 56, 63);
+    background-color: var(--bg-inputcolor);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
+    border: 1px solid var(--bg-primary);
     margin-top: 7px;
     margin-left: 10px;
     position: relative;
 }
 .options i{
-    color: #fff;
+    color: var(--bg-primary);
   font-size: 20px;
 }
 .options i:hover{
-  color: #ffffff;
+  color: var(--bg-primary)fff;
 font-size: 20px;
 }
 .options:hover{
   background: #0074cc;
-  color: #ffffff;
+  color: var(--bg-primary)fff;
 }
 
 .switch {
@@ -171,12 +203,12 @@ font-size: 20px;
   transition: .4s;
 }
 .slider:before:hover{
-  color: #fff;
+  color: var(--bg-primary);
   content: "tgfdcxsa";
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: rgb(170, 168, 168);
 }
 
 input:focus + .slider {
