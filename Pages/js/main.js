@@ -33,12 +33,12 @@ function showSlides(n) {
 
   slides[slideIndex - 1].style.display = "block";
 
-  // Triggering the transition with setTimeout
+ 
   setTimeout(function() {
-    slides[slideIndex - 1].style.transform = "translateX(0)"; // Slide in from the right
+    slides[slideIndex - 1].style.transform = "translateX(0)"; 
     dots[slideIndex - 1].classList.add("active");
-  }, 10); // You may adjust the delay based on your needs
+  }, 10); 
   setTimeout(function() {
-    plusSlides(1); // Automatically transition to the next slide after 2000 milliseconds (2 seconds)
+    plusSlides(1); 
   }, 2000);
 }
