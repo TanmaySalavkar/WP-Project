@@ -13,7 +13,7 @@
 <body>
 
     <!-- inserting navbar component -->
-    <div id="navbar"></div>
+    <div id="navbar">
     <script>
         fetch('../components/Navbar/Navbar.html')
             .then(response => response.text())
@@ -21,28 +21,43 @@
                 document.getElementById('navbar').innerHTML = data;
             });
     </script>
-
-    <div class="profile-picture">
-        <img id="profile-photo" src="../components/images/default-profile.jpeg">
     </div>
+    <div class="container">
+        <div class="profile-picture">
+            <img id="profile-photo" src="../components/images/profile.jpg" onclick="openModal()">
+        </div>
 
-    <div class="camera-container">
-        <i class="bi bi-camera"></i>
-        <input type="file" accept="image/*" id="ImageUpload" name="ImageUpload" onchange="changeProfile(this)">
-    </div>
+        <div class="user-profile">
+            <label id="Username">Username</label>
+        </div>
 
-    <div class="user-profile">
-        <label id="Username">Username</label>
-    </div>
+        <div class="user-description" id="descriptionSection" style="display: none;">
+            <p id="description">Hi i am Tanmay</p>
+        </div>
 
-    <div class="user-description">
-        <p id="description">Hi i am Tanmay</p>
-    </div>
+        <div class="popular-repo" style="display: none;">
+            <table id="repo-list" border="1px" >
+                <tr>
+                    <td>
+                        
+                    </td>
+                    
+                    <td>
+                        
+                    </td>
+                </tr> 
+            </table>
+        </div>
 
-    <div class="edit-button">
-        <button type="submit" id="edit-profile">Edit Profile</button>
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="pr-img">
+        </div>
+
     </div>
-    <script src="js/profile.js"></script>
+    <a href="editProfile.html"><button type="submit" id="edit-profile" on>Edit Profile</button></a>
 </body>
+
+<script src="js/profile.js"></script>
 
 </html>

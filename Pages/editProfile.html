@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics</title>
+    <link rel="stylesheet" href="../components/Navbar/Navbar.css">
+    <link rel="stylesheet" href="css/editProfile.css">
+    <link rel="icon" href="../components/images/icon.png">
+</head>
+<body>
+
+    <!-- inserting navbar component -->
+    <div id="navbar"></div>
+    <script>
+        fetch('../components/Navbar/Navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+    <form action="editProfile.html" method="post">
+        <div class="container">
+            <div class="profile-picture">
+                <img id="profile-photo" src="../components/images/default-profile.jpeg">
+                <div class="camera-container">
+                    <i class="bi bi-camera"></i>
+                    <input type="file" accept="image/*" id="ImageUpload" name="ImageUpload"
+                        onchange="changeProfile(this)">
+                </div>
+            </div>
+            <div class="input-data">
+                <label for="">Username</label>
+                <input type="text" id="Uname">
+                <br>
+                <label for="">Email</label>
+                <input type="email" id="mail">
+
+                <label for="">Socical Accounts</label>
+                <input type="text" id="Uname">
+                <br>
+                <input type="text" id="Uname">
+                <br>
+                <input type="text" id="Uname">
+                <input type="submit" id="save" value="Save">
+            </div>
+        </div>
+    </form>
+
+    <script src="js/editProfile.js"></script>
+</body>
+</html>
