@@ -6,8 +6,8 @@ body{
 header{
     display: flex;
     flex-direction: row;
-    background-color: transparent;
-    
+    background-color: #192734;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 5px;
@@ -21,6 +21,7 @@ header{
 header .content{
     display: flex;
     padding:8px;
+    z-index: 2;
 }
 .logo a img{
     height: 50px; 
@@ -90,7 +91,6 @@ header span{
     margin-left: 30px;
   }
   .buttons a{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     width: 60px;
     height: 20px;
@@ -98,7 +98,7 @@ header span{
     font-size: 18x;
     margin-left: 10px;
     background-color: #008deb;
-    color: #ffff;
+    color: #000000;
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -114,6 +114,7 @@ header span{
     height: 500px;
     background: transparent;
     color: #ffffff;
+    padding-bottom:70px ;
     /* box-shadow: 5px 0 0 rgba(255, 255, 255, 0.5); */
   }
   
@@ -208,8 +209,9 @@ header span{
     /* padding: 15px; */
     align-items: center;
     flex: 0;
+    /* background:-webkit-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,1)); */
     /* filter: drop-shadow(5px 5px 10px rgba(102, 102, 102, 0.5)); */
-    /* -webkit-box-reflect: below 0px linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); */
+    /* -webkit-box-reflect: left 0px linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); */
   }
   .image-container{
     position: relative;
@@ -232,3 +234,92 @@ header span{
     cursor: pointer;
     margin-left: 150px;
   }
+
+
+
+  .hero-section {
+    margin-left: 0;
+    margin-top: 60px;
+    width: 100%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/components/images/12345.jpg') center/cover;
+    filter: brightness(-0.3);
+    filter: blur(25px);
+    z-index: -1; /* Move the pseudo-element behind the content */
+}
+.overlay {
+  opacity: .7;
+  background-color: black;
+  position: absolute;
+  left: 0; top: 0; 
+  height: 550px; width: 100%;
+}
+.hero-section .slide1 {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    z-index: 1; /* Bring the content to the front */
+}
+.hero-img{
+  position: relative;
+  width: 700px;
+}
+.hero-section .hero-content {
+  position: relative;
+    max-width: 600px;
+    /* margin-right: 50px; Adjusted margin-right to push content to the right */
+    color: #fff;
+}
+
+.hero-section h2 {
+    font-size: 60px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    width: 100%;
+    font-size: 20px;
+    margin-right: 25px;
+    margin-bottom: 50px;
+    word-spacing: 5px;
+    line-height: 30px;
+    font-family: sans-serif;
+}
+
+.hero-section button {
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: sans-serif;
+    background-color: #008deb;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 150px;
+    transition: background-color 0.3s;
+}
+
+.hero-section .image-container img {
+    margin-top: 20px;
+    /* height: 500px;
+    width: 450px; */
+}

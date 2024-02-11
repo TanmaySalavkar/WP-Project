@@ -40,5 +40,5 @@ function showSlides(n) {
   }, 10); 
   setTimeout(function() {
     plusSlides(1); 
-  }, 2000);
+  }, 10000);
 }
