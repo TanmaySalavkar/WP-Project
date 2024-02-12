@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Transparent Login Form HTML CSS</title>
-	<link href="css/login.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-	<div class="form-box">
-		<div class="header-text">
-			Login Form
-		</div><input placeholder="Your Email Address" type="text"> <input placeholder="Your Password" type="password"> <input id="terms" type="checkbox"> <label for="terms"></label><span>Agree with <a href="#">Terms & Conditions</a></span> <button>login</button>
-	</div>
+
+    <div class="container">
+     <form id="loginForm" onsubmit="validateLoginForm(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div id="loginError" class="error"></div>
+
+        <div class="button-container">
+            <button onclick="showForgotPassword()">Forgot Password?</button>
+            <a href="registration.html"><button>Register</button></a>
+        </div>
+
+        <div id="forgotPasswordContainer" style="display: none;">
+            <label for="forgotEmail">Enter your email:</label>
+            <input type="email" id="forgotEmail" name="forgotEmail" required>
+            <button type="button" onclick="recoverPassword()">Recover Password</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
 </body>
 </html>
