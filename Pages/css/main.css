@@ -108,16 +108,28 @@ header span{
 
  .slideshow-container {
     max-width: 100%;
-    top: 100px;
+    top: 70px;
     position: relative;
     margin: auto;
-    height: 500px;
-    background: transparent;
+    height: 470px;
+    /* background: url('/components/images/bg3.jpg') center/cover; */
     color: #ffffff;
-    padding-bottom:70px ;
+    padding-bottom:90px ;
     /* box-shadow: 5px 0 0 rgba(255, 255, 255, 0.5); */
   }
-  
+  .slideshow-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+    background: url('/components/images/bg4.jpg') center/cover;
+    filter: brightness(-0.3);
+    filter: blur(25px);
+    z-index: 0; 
+}
   .prev,
   .next {
     cursor: pointer;
@@ -204,12 +216,12 @@ header span{
   }
   .slide1 img{
     border: none;
-    margin-top: 0;
+    margin-top: 50px;
     margin-left: 150px;
     /* padding: 15px; */
     align-items: center;
     flex: 0;
-    /* background:-webkit-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,1)); */
+    /* background:-webkit-linear-gradient(left, rgba(255,0,0,0), rgb(82, 82, 82)); */
     /* filter: drop-shadow(5px 5px 10px rgba(102, 102, 102, 0.5)); */
     /* -webkit-box-reflect: left 0px linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); */
   }
@@ -235,7 +247,17 @@ header span{
     margin-left: 150px;
   }
 
-
+  .reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+    background: transparent;
+  }
+  .reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+  }
 
   .hero-section {
     margin-left: 0;
@@ -258,14 +280,14 @@ header span{
     background: url('/components/images/12345.jpg') center/cover;
     filter: brightness(-0.3);
     filter: blur(25px);
-    z-index: -1; /* Move the pseudo-element behind the content */
+    z-index: 0; /* Move the pseudo-element behind the content */
 }
 .overlay {
   opacity: .7;
   background-color: black;
   position: absolute;
   left: 0; top: 0; 
-  height: 550px; width: 100%;
+  height: 100%; width: 100%;
 }
 .hero-section .slide1 {
     display: flex;
@@ -279,10 +301,10 @@ header span{
 }
 .hero-section .hero-content {
   position: relative;
-    max-width: 600px;
-    /* margin-right: 50px; Adjusted margin-right to push content to the right */
-    color: #fff;
+  max-width: 600px;
+  color: #fff;
 }
+
 
 .hero-section h2 {
     font-size: 60px;
@@ -322,4 +344,114 @@ header span{
     margin-top: 20px;
     /* height: 500px;
     width: 450px; */
+}
+
+.features-section{
+  width: 100%;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+}
+.features-section::before{
+  content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+      background: url('/components/images/bg5.jpg') center/cover;
+  background-repeat: no-repeat;
+  filter: blur(20px);
+  filter: brightness(-0.3);
+  z-index: -1;
+}
+.features-section h1{
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+  z-index: 1;
+}
+.features-section .row1{
+  display: flex;
+  justify-content: center;
+}
+.features-section .row2{
+  display: flex;
+  justify-content: center;
+}
+.card {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  margin: 50px;
+}
+.card .image-box {
+  width: 300px;
+  height: 300px;
+  border-radius: inherit;
+}
+.card .image-box img {
+  height:300px;
+  width:300px;
+  object-fit: cover;
+  object-position: 50% 90%;
+  border-radius: inherit;
+  transition: 0.5s ease-in-out;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid white;
+  border-radius: inherit;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.card:hover img {
+  filter: grayscale(0.7) brightness(0.4);
+}
+.card:hover::after {
+  opacity: 1;
+  inset: 20px;
+}
+
+.card-content {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card-content h2,
+.card-content p {
+  opacity: 0;
+  transition: 0.4s 0.2s ease;
+}
+.card-content h2 {
+  color: #d1d1d1;
+  margin-bottom: 12px;
+  scale: 0.7;
+}
+.card-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d1d1d1;
+  transform: translateY(50%);
+}
+.card:hover .card-content h2 {
+  scale: 1;
+  opacity: 1;
+}
+.card:hover .card-content P {
+  opacity: 1;
+  transform: translateY(0);
 }
