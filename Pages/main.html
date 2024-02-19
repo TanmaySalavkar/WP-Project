@@ -6,6 +6,30 @@
     <link rel="stylesheet" href="/Pages/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
     <title>Document</title>
+    <style>
+      footer {
+  background-color: #040624; /* Adjust the background color as needed */
+  color: #fff; /* Adjust the text color as needed */
+  padding: 20px;
+  text-align: center;
+}
+
+.social-media {
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #fff; /* Adjust the link color as needed */
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
+}
+
+    </style>
 </head>
 <body>
     <header> 
@@ -17,7 +41,7 @@
               <!-- website name or title -->
               <span>RoboCollab</span>
               <!-- search bar -->
-              <form id="search-form" role="search">
+              <form id="search-form" role="search-toggle">
                 <input type="search" id="query" name="q"
                  placeholder="Search..."
                  aria-label="Search through site content">
@@ -154,7 +178,25 @@
           </div>
         </div>
           </div>
-        
+          <footer>
+            <div class="social-media">
+              <div class="option-menu">
+                <div class="options" title="notifications">
+                  <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                </div>
+                <div class="options" title="notifications">
+                  <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                </div>
+                <div class="options" title="notifications">
+                  <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+                </div>
+                <div class="options" title="notifications">
+                  <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+            <p>&copy; 2024 RoboCollab. All rights reserved.</p>
+          </footer> 
     </section>
     
     
