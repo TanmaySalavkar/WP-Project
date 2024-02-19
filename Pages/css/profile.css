@@ -73,12 +73,13 @@ body{
     color: white;
     text-align: left;
     /* margin-right: 100px; */
-    margin-top: 31%;
+    margin-top: 33%;
     margin-left: 180px;
     margin-right: 75%;
 }
 
 .user-description{
+    text-align: start;
     background-color: #3a5768;
     color: white;
     font-size: 20px;
@@ -108,9 +109,9 @@ body{
     font-size: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
-    width: 20%;
-    margin-top: 35%;
-    margin-left: 78px;
+    width: 21%;
+    margin-top: 37%;
+    margin-left: 80px;
     background-color: #3a5768;
     border-color: rgb(102, 151, 172);
     border-style: solid;
@@ -149,8 +150,8 @@ body{
 
 .close{
     position: absolute;
-    top:186px;
-    right: 31%;
+    top:90px;
+    right: 1%;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
@@ -161,4 +162,47 @@ body{
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+/* Media Queries Used */
+@media only screen and (max-width: 768px) {
+    .profile-picture {
+        width: 200px;
+        height: 200px;
+        margin-top: 30%;
+        margin-left: 22%;
+    }
+
+    #Username {
+        position: absolute;
+        margin-top: 330px;
+        margin-left: 125px;
+    }
+
+    .user-description {
+        width: 8cm;
+        top: 400px;
+        left: 30px;
+        font-size: 15px;
+    }
+
+    #edit-profile {
+        width: 35%;
+        margin-top: 500px;
+        margin-left: 125px;
+        
+    }
+
+    .modal-content {
+        width: 70%;
+        height: 100%;
+        max-width: 500px;
+        max-height: 250px;
+    }
+
+    .close {
+        top:100px;
+        right: 2%;
+    }
 }
