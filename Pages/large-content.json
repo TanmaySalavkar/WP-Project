@@ -1,0 +1,54 @@
+{
+    "sections":[
+        {
+            "subtitle": "1. Smart Robot For Face RecognitionA place for awesome content",
+            "paragraphs": [
+                "This article describes how you can design a smart robot that can recognize your face and of other regular visitors. If you go in front of the camera, the robot will recognize your face. It will call out your name and also display your name on the computer screen."
+            ]
+        },
+        {
+            "subtitle": "2. Line Follower Robot Using PID Algorithm",
+            "paragraphs": [
+                "A line follower is a simple robot that follows a thick line drawn on the floor using infrared (IR) or some other optical sensors. This line follower robot uses two motors with wheels on the rear and a castor wheel as support on the front."
+            ]
+        },
+        {
+            "subtitle": "3. HMI-Based Robotic Arm",
+            "paragraphs": [
+                "Certain jobs require high precision for which a human hand is needed along with the autonomous robot. In this project, we have developed an HMI type of robotic arm, using which robots can follow and copy the movements of human action."
+            ]
+        },
+        {
+            "subtitle": "4. Hector Slam Mapping and Indoor Positioning ROBOT",
+            "paragraphs": [
+                "In this project, we will be devising a low-cost system for creating real-time maps of indoor environments. This will allow a robot to operate without collisions and navigate by avoiding any obstacles."
+            ]
+        },
+        {
+            "subtitle": "5. Radar and ROS Powered Indoor Home Mapping and Positioning Robot",
+            "paragraphs": [
+                "The indoor mapping and positioning feature of a Robot Operating System (ROS) controlled robot is essential in navigating through a hall, warehouse, room, or any other environment."
+            ]
+        },
+        {          
+            "subtitle": "6. Artificial Intelligence-Based Chatbot for Appliance Control",
+            "paragraphs": [
+                "Robotics Projects with Artificial intelligence are high in demand. This project presents artificial intelligence (AI) based chatbot for controlling electrical home appliances using ESP8266-12E NodeMCU and the Facebook Messenger platform.The platform for creating an AI chatbot for Facebook is Chatfuel. The project also uses IFTTT and Adafruit IO for back-end support. The project is great for integrating AI with the Internet of Things (IoT)."
+            ]
+        },
+        {
+            "subtitle": "7. Virtual Telepresence Robot Using Raspberry Pi",
+            "paragraphs": [
+                "This robot with a camera is placed in a remote location to capture the environment in visual form using Raspberry Pi (RPi). The captured visuals are displayed on the user's virtual reality (VR) headset.An added feature allows the camera to move in the direction of the user’s head movements. This gives the user a real-time experience as if he is present where the robot is located."
+            ]
+        },
+        {
+            "subtitle": "8. DIY Remote Control Robot",
+            "paragraphs": [
+                "To control a robot, the signal is usually sent through a wireless system using radio frequency (RF) and infrared (IR). To send an IR signal, you need a transmitter and a receiver with an encoding and decoding system. Presented here is a simple remote-controlled robot that can be controlled using an IR remote that is used for a TV or DVD player, or an equivalent IR remote."
+            ]
+        }
+    ]
+    
+    
+}

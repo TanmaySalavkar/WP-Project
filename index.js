@@ -1,50 +1,20 @@
-function openPopup() {
-    document.getElementById("popupContainer").style.display = "block";
-}
+window.addEventListener('scroll',reveal);
 
-// Function to close the popup
-function closePopup() {
-    document.getElementById("popupContainer").style.display = "none";
-}
+function reveal(){
+  var reveals=document.querySelectorAll('.reveal');
+  for(var i=0;i<reveals.length;i++){
+    var windowheight=window.innerHeight;
+    var revealtop=reveals[i].getBoundingClientRect().top;
+    var revealpoint=150;
 
-// Event listener for the login button
-document.getElementById("repo-btn").addEventListener("click", openPopup); 
-
-
-
-
-const audio = document.getElementById('audio');
-
-function playaudio() {
-    audio.play();
-}
-
-function pauseaudio() {
-    audio.pause();
-    audio.currentTime = 0; // Reset audio to the beginning
-}
-
-
-
-
-
-
-
-
-
-const navbar = document.getElementById('navbar');
-const sidebar = document.getElementById('sidebar');
-
-window.addEventListener('scroll', () => {
-    const navbarHeight = navbar.offsetHeight;
-    const scrolled = window.scrollY;
-
-    if (scrolled > navbarHeight) {
-        sidebar.style.top = '0';
-    } else {
-        sidebar.style.top = `${navbarHeight - scrolled}px`;
+    if(revealtop < windowheight-revealpoint){
+      reveals[i].classList.add('active');
     }
-});
+    else{
+      reveals[i].classList.remove('active');
+    }
+  }
+}
 
 
 
@@ -54,29 +24,50 @@ window.addEventListener('scroll', () => {
 
 
 
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('large-content.json')
-        .then(response => response.json())
-        .then(data => {
-            const template = Handlebars.compile(document.getElementById('contentTemplate').innerHTML);
-            document.getElementById('contentContainer').innerHTML = template(data);
-        })
-        .catch(error => console.error('Error fetching content:', error));
-});
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const toggle_btn = document.querySelector('#checkbox');
-    console.log(toggle_btn);
+var slideIndex = 1;
+showSlides(slideIndex);
 
-    toggle_btn.addEventListener('change', () => {
-        if (toggle_btn.checked) {
-            console.log('checked');
-            document.body.classList.add('dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-        }
-    });
-});
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    slides[i].style.transition = "transform 0.5s ease"; // Add transition property
+    slides[i].style.transform = "translateX(100%)"; // Start off-screen to the right
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+
+ 
+  setTimeout(function() {
+    slides[slideIndex - 1].style.transform = "translateX(0)"; 
+    dots[slideIndex - 1].classList.add("active");
+  }, 10); 
+  setTimeout(function() {
+    plusSlides(1); 
+  }, 10000);
+}

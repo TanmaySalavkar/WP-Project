@@ -1,205 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics</title>
+    <link rel="stylesheet" href="../components/Navbar/Navbar.css">
+    <link rel="stylesheet" href="../components/Robot/robot.css">
     <link rel="stylesheet" href="/Pages/css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
-    <title>Document</title>
-    <style>
-      footer {
-  background-color: #040624; /* Adjust the background color as needed */
-  color: #fff; /* Adjust the text color as needed */
-  padding: 20px;
-  text-align: center;
-}
-
-.social-media {
-  margin-bottom: 10px;
-}
-
-.social-media a {
-  display: inline-block;
-  margin: 0 10px;
-  color: #fff; /* Adjust the link color as needed */
-  text-decoration: none;
-}
-
-.social-media a:hover {
-  text-decoration: underline;
-}
-
-    </style>
+    <link rel="icon" href="../components/images/icon.png">
 </head>
 <body>
-    <header> 
-        <div class="content">
-            <!-- logo -->
-            <div class="logo">
-                <a href="/Pages/main.html"><img src="/components/images/robot.png"></a>
-              </div>
-              <!-- website name or title -->
-              <span>RoboCollab</span>
-              <!-- search bar -->
-              <form id="search-form" role="search-toggle">
-                <input type="search" id="query" name="q"
-                 placeholder="Search..."
-                 aria-label="Search through site content">
-                <button><i class="bi bi-search"></i></button>
-              </form>
+    <!-- inserting navbar component -->
+    <div id="navbar"></div>
+    <script>
+        fetch('../components/Navbar/Navbar.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        });
+    </script>
 
-              <!-- buttons -->
-              <div class="buttons">
-                <a href="/Pages/login.html" class="nav-btn"><strong>Sign in</strong></a>
-                <a href="#" class="nav-btn"><strong>Sign up</strong></a>
-              </div>
-              
+    <main>
+        <aside class="left-sidebar" id="sidebar">
+            <div class="sidebar-content">
+
+                <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Find Repositories</h3>
+                <form id="form2" role="search">
+                    <input type="search" id="query" name="q"
+                     placeholder="Search..."
+                     aria-label="Search through site content">
+                    <button><i class="bi bi-search"></i></button>
+                </form>
+                <div class="repo-source">
+                    <ul>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">username / repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">username / repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">username / repository1wserdtfcgvthbjnm</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-source">
+                            <div class="repolist">
+                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
+                                <div class="reponame">
+                                    <a href="#">repository1</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="repo-creation">
+                    <h3>Lets build a new project!</h3>
+                    <a id="repo-btn" class="repo-btn" data-target="#login" data-toggle="modal">Create New Repo</a>
+                </div>
+
+                <div class="popup-container" id="popupContainer">
+                    <div class="popup">
+                        <span class="close" onclick="closePopup()">&times;</span>
+
+                        <form id="repo-form">
+                            <h2>Create New Repository</h2>
+                            <label for="repo-name">Username:</label>
+                            <input type="text" disabled id="username" name="username" placeholder="alex">
+
+                            <label for="repo-name">Repository Name:</label>
+                            <input type="text" id="username" name="username">
+                            
+                            <label for="password">Description:</label>
+                            <textarea type="textarea" id="password" name="password"></textarea>
+            
+                            <input type="submit" id="repo-submit"  value="Create New Repo">
+                        </form>
+                    </div>
+                </div>
+
+                
+        </aside>
+        
 
 
+        <div class="main">
+            <div class="about">
+                
+                    <h2>Our Journey</h2>
+                    <p>UnleashRobotics was founded with a vision to create an inclusive space for robotics enthusiasts of all backgrounds and skill levels...</p>           
+                    <h2>Our Mission</h2>
+                    <p>At UnleashRobotics, our mission is to empower individuals to explore the vast realm of robotics...</p>
+            
+                    <h2>What Sets Us Apart</h2>
+                    <ul>
+                        <li><strong>Open-Source Excellence:</strong> Discover a treasure trove of open-source robot designs contributed by our diverse community...</li>
+                        <li><strong>Collaboration Redefined:</strong> Forge connections with like-minded individuals, form teams, and embark on collaborative projects...</li>
+                        <li><strong>Learning Resources Galore:</strong> Elevate your robotics skills with our rich collection of learning resources...</li>
+                        <li><strong>Project Showcases:</strong> Explore the incredible projects developed by our community members...</li>
+                    </ul>
+            </div>
+
+
+            <div class="project-ideas">
+                <h1>Are you Beginner?</h1>
+                <h3>here are some Robotics project ideas pick up and start a new project</h3>
+            </div>          
+            <div id="contentContainer"></div>
+            <script id="contentTemplate" type="text/x-handlebars-template">
+                {{#each sections}}
+                <div class="section">
+                    <h2>{{subtitle}}</h2>
+                    {{#each paragraphs}}
+                        <p>{{this}}</p>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </script> 
+        
+            
+        </div>
+        <div class="right-sidebar">
+            <!-- <div class="img">
+                <img src="components/images/robot-img.png" alt="robot-img" height="350" width="300">
+            </div> -->
+
+            <div class="robots" onmouseover="playaudio()" onmouseout="pauseaudio()">
+                <div class="android" > 
+                    <div class="head"> 
+                        <div class="eyes"> 
+                            <div class="left_eye"></div> 
+                            <div class="right_eye"></div>
+                        </div> 
+                    </div> 
+                    <div class="upper_body"> 
+                        <div class="left_arm"></div> 
+                        <div class="torso">
+                </div> 
+                        <div class="right_arm"></div> 
+                    </div> 
+                    <div class="lower_body"> 
+                        <div class="left_leg"></div> 
+                        <div class="right_leg"></div> 
+                    </div> 
+                    <audio id="audio" src="../robot-voice.mp3"></audio>
+                </div>
+               
+            </div>
+            <video width="320" height="240" controls>
+                <source src="../What is ROBOTICS Robotics Explained Robotics Technology What are Robots.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- <iframe width="60" height="25" src="https://www.youtube.com/watch?v=RpVUTxE9Bdk" frameborder="0" allowfullscreen></iframe> -->
         </div>
         
-    </header>
-    <section>
-        <div class="slideshow-container">
-          <div class="overlay"></div>
-            <div class="mySlides">
-              <div class="numbertext">1 / 3</div>
-              <div class="slide1">
-                <div class="text-content">
-                  <h1>Welcome to RoboCollab </h1>
-                <h3>A thriving platform designed for the passionate community of robotics enthusiasts and innovators</h3>    
-                </div>
-                
-                <img src="/components/images/Designer-removebg-preview.png" alt="" height="400px" width="400px">
-              </div> 
-              <!--  -->
-                
-              <!-- <img src="/components/images/robo.png" alt="">       -->
-            </div>
-          
-            <div class="mySlides">
-              <div class="numbertext">2 / 3</div>
-              <div class="slide1">
-                <div class="text-content">
-                  <h1>Share and collabarate</h1>
-                  <h3>Share and view open source robot designs and collabarate on different projects with other Robotians</h3>
-                </div>
-                <div class="image-container">
-                  <img src="/components/images/collaborate.png" alt="" height="380px" width="380px">
-                
-              </div>
-            </div>
-            </div>
-          
-            <div class="mySlides">
-              <div class="numbertext">3 / 3</div>
-              <div class="slide1">
-                <div class="text-content">
-                  <h1>SignUp & start</h1>
-                  <h3>Don't know from where to start ? number of list of project ideas are provided. Sign up now</h3>
-                </div>
-                <div class="image-container">
-                  <img src="/components/images/robot_idea.png" alt="" height="380px" width="380px">
-                </div>
-                
-              </div>            
-            </div>
-          
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <div style="text-align: center">
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
-          
-        </div>
-          
-          
-        
-        
-          <div class="hero-section " id="heroSection">
-            <div class="overlay"></div>
-            <div class="slide1 ">
-              <div class="hero-img">
-                <img src="/components/images/hero-bg1-removebg-preview.png" alt="" height="500px" width="800px">
-              </div>
-              <div class="hero-content reveal" id="heroContent">
-                <h2>Our Mission</h2>
-                <p>At RoboCollab, our mission is to empower individuals to explore the vast realm of robotics. We strive to break down barriers, making cutting-edge technology accessible to everyone. Our commitment to open-source principles ensures that knowledge flows freely, enabling innovation to flourish.</p>
-                <button>Sign Up</button>
-              </div>
-            </div>
-          </div>
-          
-
-          <div class="features-section">
-            <div class="overlay"></div>
-            <h1>What We Offer</h1>
-            <div class="row1">
-            <div class="card">
-              <div class="image-box">
-                <img src="/components/images/robot-design.jpg" alt="" >
-              </div>
-              <div class="card-content">
-                <h2>Open Source Robot Designs</h2>
-                <p>Explore a vast repository of open-source robot designs contributed by number of robot engineers in the world</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="image-box">
-                <img src="/components/images/collaborative-2.png" alt="" >
-              </div>
-              <div class="card-content">
-                <h2>Collaboration Hub</h2>
-                <p>Connect with like-minded individuals, form teams, and collaborate on exciting robotics projects.</p>
-              </div>
-            </div>
-          </div>
-          <div class="row2">
-          <div class="card">
-            <div class="image-box">
-              <img src="/components/images/idea.jpg" alt="" >
-            </div>
-            <div class="card-content">
-              <h2>Project Ideas</h2>
-              <p>Whether you're a seasoned engineer or a newcomer to robotics, you'll find a number of project ideas topics to kickstart your journey</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="image-box">
-              <img src="/components/images/management.jpeg" alt="" >
-            </div>
-            <div class="card-content">
-              <h2>Project Management</h2>
-              <p>Create and share your projects,contribute to ongoing Repositories and upgrade your skills in the world of robotics</p>
-            </div>
-          </div>
-        </div>
-          </div>
-          <footer>
-            <div class="social-media">
-              <div class="option-menu">
-                <div class="options" title="notifications">
-                  <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-                </div>
-                <div class="options" title="notifications">
-                  <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-                </div>
-                <div class="options" title="notifications">
-                  <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-                </div>
-                <div class="options" title="notifications">
-                  <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-            <p>&copy; 2024 RoboCollab. All rights reserved.</p>
-          </footer> 
-    </section>
-    
-    
+    </main>     
+</div>
 <script src="/Pages/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </body>
 </html>
