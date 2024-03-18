@@ -91,10 +91,10 @@
                             <input type="text" disabled id="username" name="username" placeholder="alex">
 
                             <label for="repo-name">Repository Name:</label>
-                            <input type="text" id="username" name="username">
+                            <input type="text" id="repo-name" name="username">
                             
-                            <label for="password">Description:</label>
-                            <textarea type="textarea" id="password" name="password"></textarea>
+                            <label for="repo-desc">Description:</label>
+                            <textarea id="description" name="description" rows="4" cols="50"></textarea>
             
                             <input type="submit" id="repo-submit"  value="Create New Repo">
                         </form>
@@ -165,10 +165,22 @@
                         <div class="left_leg"></div> 
                         <div class="right_leg"></div> 
                     </div> 
-                    <audio id="audio" src="../robot-voice.mp3"></audio>
+                    <audio id="audio" src="../robot-voice.mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
                 </div>
                
             </div>
+            <canvas id="myCanvas" width="300" height="100" >
+                Your browser does not support the HTML canvas tag.</canvas>
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.font = "30px Arial";
+                ctx.strokeStyle = "white";
+                ctx.strokeText("Hello Robot Engineers", 0, 50);            
+            </script>
+            
             <video width="320" height="240" controls>
                 <source src="../What is ROBOTICS Robotics Explained Robotics Technology What are Robots.mp4" type="video/mp4">
                 Your browser does not support the video tag.

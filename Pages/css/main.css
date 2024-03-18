@@ -240,6 +240,18 @@ ul{
     color: var(--bg-primary);
     background: transparent;
 }
+.popup #description{
+    width: 100%;
+    padding: 12px;
+    height: auto;
+    color: var(--bg-primary);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    border: 1px solid var(--bg-primary);
+    border-radius: 4px;
+    background: transparent;
+    resize: horizontal; 
+}
 #repo-form{
     align-items: center;
 }
