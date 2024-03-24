@@ -1,0 +1,117 @@
+.login-container{
+    width: 300px;
+    margin: 10px auto;
+    padding: 14px 20px;
+    border: 1px solid #30b3db;
+    position: relative;
+    border-radius: 10px;
+    padding: 30px 40px;
+    background:transparent;
+    border: transparent;
+}
+
+input[type="text"],
+input[type="password"],
+button{
+    width: 235px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid #30b3db;
+    font-family: "Poppins",sans-serif;
+    /* box-sizing: border-box; */
+    border-radius: 40px;
+    background: #17667e;
+    color: #fff;
+    border: #30b3db;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder{
+    color: #fff;
+}
+
+button{
+    background-color: #42c5f5;
+    color: aliceblue;
+    cursor: pointer;
+    width: 280px;
+    font-weight: 300px;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+/* .cancelbtn{
+    width: auto;
+    opacity: 8.0;
+    background-color: #e60a0a;
+} */
+
+form{
+    /* width: 420px;
+    background: #17667e; */
+    color: #fff;
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("image.png")no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+i.user-icon,
+i.lock-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #30b3db;
+}
+
+i.user-icon {
+    right: 10px; /* Adjusted right position for user icon */
+}
+
+i.lock-icon {
+    right: 10px; /* Adjusted right position for lock icon */
+}
+
+.remember-forgot{
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-link{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+   text-decoration: underline;
+}
+
+.remember-forgot a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}

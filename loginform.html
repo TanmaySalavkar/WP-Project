@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const registerLink = document.getElementById("register-link");
+            registerLink.addEventListener("click", function(event){
+                event.preventDefault();
+
+                window.location.href="registration.html"
+            });
+        });
+    </script> -->
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="login-container">
+        <form action="login_validate.php" method="post" onsubmit="return enableloginbutton()">
+            <h1><b>Login</b></h1>
+            <input type="text" id="username" name="username" placeholder="Username or Email" required>
+            <i class='bx bxs-user'></i>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+            <button type="submit" id="login-button" >Login</button>
+    
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <div class="register-link">
+                <p>Don't have an account? <a href="registration.html" id="register-link">Register</a></p>
+            </div>
+        </form>
+    </div>
+    <script>
+        function enableloginbutton(){
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var loginButton = document.getElementById("login-button");
+
+            // if(username !== "" && password !== ""){
+            //     loginButton.removeAttribute("disabled");
+            // }else{
+            //     loginButton.setAttribute("disabled","disabled");
+            // }
+            return true;
+    }
+    </script>
+</body>
+</html>

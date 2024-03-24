@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <style>
+            .error-message{
+                color: red;
+                font-size: 12px;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="register.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="register-container">
+        <form action="save.php" method="post" class="registration-form" onsubmit="return validateform()">
+            
+            <h1><b>Register</b></h1>
+            <div class="input-box">
+                <input type="text" id="username" name="username" placeholder="Username" required><br>
+                <i class='bx bxs-user'></i>
+            <span id="username-error" class="error-message"></span><br>
+            </div>
+
+            <div class="input-box">
+            <input type="email" id="Email" name="email" placeholder="Email" required><br>
+            <i class='bx bxs-envelope'></i>
+            <span id="email-error" class="error-message"></span><br>
+            </div>
+            
+            <div class="input-box">
+            <input type="password" id="Password" name="password" placeholder="Password" required><br>
+            <i class='bx bxs-lock-alt' ></i>
+            <span id="password-error" class="error-message"></span><br>
+            </div>
+            
+            <div class="input-box">
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required><br>
+            <i class='bx bxs-lock-alt' ></i>
+            <span id="confirm-password-error" class="error-message"></span><br>
+            </div>
+            
+            
+            <div class="input-box">
+            <input type="text" id="country" name="country" placeholder="Country"><br>
+            <i class='bx bx-globe'></i>
+            </div>
+
+            <div class="input-box-dropdown">
+                <select id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br>
+                </div>
+
+            <div class="terms">
+            <label><input type="checkbox" id="terms" required>I agree to the <a href="#">terms of service</a></label><br>
+            </div>
+
+            
+            <button type="submit" class="button">Register</button> 
+        </form>
+        </div>
+        <script>
+            function validateform(){
+                var username= document.getElementById("username").value;
+                var email= document.getElementById("Email").value;
+                var password= document.getElementById("Password").value;
+                var confirm_password= document.getElementById("confirm_password").value;
+                var gender= document.getElementById("gender").value;
+
+                if(username.length < 3){
+                    document.getElementById("username-error").innerText="Username must be atleast 3 characters";
+                    return false;
+                }else{
+                    document.getElementById("username-error").innerText = "";
+                }
+
+                var emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!emailRegex.test(email)){
+                    document.getElementById("email-error").innerText = "Invalid email format";
+                    return false;
+                }else{
+                    document.getElementById("email-error").innerText = "";
+                }
+
+                var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+                if(!passwordRegex.test(password)){
+                    document.getElementById("password-error").innerText = "Password must be at least 8 characters and contain at least one special character (!@#$%^&*)";
+                    return false;
+                }else{
+                    document.getElementById("password-error").innerText = "";
+                }
+
+                if(password!==confirm_password){
+                    document.getElementById("confirm-password-error").innerText = "Passwords do not match";
+                    return false;
+                }else{
+                    document.getElementById("confirm-password-error").innerText = "";
+                }
+
+                if(gender === ""){
+                    alert("Please select your gender");
+                    return false;
+                }
+                return true;
+                }
+        </script>
+    </body>
+</html>
