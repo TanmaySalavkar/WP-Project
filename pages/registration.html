@@ -5,45 +5,47 @@
         <title>Registration Form</title>
         <style>
             .error-message{
-                color: red;
+                color: rgb(255, 0, 0);
                 font-size: 12px;
+                font-weight: normal;
             }
         </style>
-        <link rel="stylesheet" type="text/css" href="./css/register.css">
+        <link rel="stylesheet" type="text/css" href="register.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
         <div class="register-container">
-        <form action="save.php" method="post" class="registration-form" onsubmit="return validateform()">
+        <form autocomplete="off" action="save.php" method="post" class="registration-form" onsubmit="return validateform()">
             
             <h1><b>Register</b></h1>
             <div class="input-box">
-                <input type="text" id="username" name="username" placeholder="Username" required><br>
+                <input type="text" id="username" name="username" placeholder="Username" required>
                 <i class='bx bxs-user'></i>
             <span id="username-error" class="error-message"></span><br>
             </div>
 
             <div class="input-box">
-            <input type="email" id="Email" name="email" placeholder="Email" required><br>
+            <input type="email" id="Email" name="email" placeholder="Email" required>
             <i class='bx bxs-envelope'></i>
             <span id="email-error" class="error-message"></span><br>
             </div>
             
             <div class="input-box">
-            <input type="password" id="Password" name="password" placeholder="Password" required><br>
+            <input type="text" id="Password" name="password" placeholder="Password" required>
             <i class='bx bxs-lock-alt' ></i>
             <span id="password-error" class="error-message"></span><br>
             </div>
             
             <div class="input-box">
-            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required><br>
-            <i class='bx bxs-lock-alt' ></i>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            <img src="whiteeye.png" onclick="pass()" class="pass-icon" id="pass-icon">
+            <!-- <i class='bx bxs-lock-alt' ></i> -->
             <span id="confirm-password-error" class="error-message"></span><br>
             </div>
             
             
             <div class="input-box">
-            <input type="text" id="country" name="country" placeholder="Country"><br>
+            <input type="text" id="country" name="country" placeholder="Country">
             <i class='bx bx-globe'></i>
             </div>
 
@@ -54,7 +56,7 @@
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                 </select><br>
-                </div>
+            </div>
 
             <div class="terms">
             <label><input type="checkbox" id="terms" required>I agree to the <a href="#">terms of service</a></label><br>
@@ -64,6 +66,7 @@
             <button type="submit" class="button">Register</button> 
         </form>
         </div>
+        <script src="hideshow.js"></script>
         <script>
             function validateform(){
                 var username= document.getElementById("username").value;
@@ -72,39 +75,56 @@
                 var confirm_password= document.getElementById("confirm_password").value;
                 var gender= document.getElementById("gender").value;
 
+                var usernameInput = document.getElementById("username");
+                var emailInput = document.getElementById("Email");
+                var passwordInput = document.getElementById("Password");
+                var confirmPasswordInput = document.getElementById("confirm_password");
+                var genderInput = document.getElementById("gender");
+
                 if(username.length < 3){
                     document.getElementById("username-error").innerText="Username must be atleast 3 characters";
+                    usernameInput.style.border = "1px solid red";
                     return false;
                 }else{
                     document.getElementById("username-error").innerText = "";
+                    usernameInput.style.border = "";
                 }
 
                 var emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if(!emailRegex.test(email)){
                     document.getElementById("email-error").innerText = "Invalid email format";
+                    emailInput.style.border ="1px solid red";
                     return false;
                 }else{
                     document.getElementById("email-error").innerText = "";
+                    emailInput.style.border ="";
                 }
 
                 var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
                 if(!passwordRegex.test(password)){
-                    document.getElementById("password-error").innerText = "Password must be at least 8 characters and contain at least one special character (!@#$%^&*)";
+                    document.getElementById("password-error").innerText = "Password must be 8 characters & contain (!@#$%^&*)";
+                    passwordInput.style.border = "1px solid red";
                     return false;
                 }else{
                     document.getElementById("password-error").innerText = "";
+                    passwordInput.style.border = "";
                 }
 
                 if(password!==confirm_password){
                     document.getElementById("confirm-password-error").innerText = "Passwords do not match";
+                    confirmPasswordInput.style.border = "1px solid red";
                     return false;
                 }else{
                     document.getElementById("confirm-password-error").innerText = "";
+                    confirmPasswordInput.style.border = "";
                 }
 
                 if(gender === ""){
                     alert("Please select your gender");
+                    genderInput.style.border = "1px solid red";
                     return false;
+                }else{
+                    genderInput.style.border = "";
                 }
                 return true;
                 }

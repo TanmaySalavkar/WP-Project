@@ -1,9 +1,10 @@
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 95vh;
-    background:url('/img3.png') no-repeat;
+    background:url('img3.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -39,18 +40,9 @@ body{
     position: relative;
     width: 80%;
     height: 50px;
-    margin: 30px 25px;
+    margin: 25px 20px;
     background: transparent;
 }
-
-.input-box-dropdown{
-    position: relative;
-    width: 80%;
-    height: 50px;
-    margin: 30px 25px;
-    border: 40px;
-}
-
 
 .input-box input{
     width: 100%;
@@ -65,21 +57,15 @@ body{
     padding: 0px 10px 0px 10px ;
 }
 
-.input-box input:focus,
-.input-box input:-webkit-autofill {
-    background-color: transparent !important; /* Set background to transparent on focus and autofill */
-}
 
 .input-box input::placeholder {
     color:#fff;
 }
 
-.input-box input:focus::placeholder,
-.input-box input:-moz-placeholder,
-.input-box input::-moz-placeholder,
-.input-box input:-ms-input-placeholder {
+.input-box input:focus::placeholder {
     color: rgba(173, 216, 230, 0.7); /* Adjust placeholder color on focus */
 }
+
 
 .input-box i{
     position: absolute;
@@ -93,7 +79,7 @@ body{
     display: flex;
     justify-content: center;
     font-size: 14.5px;
-    margin: -35px 0 15px;
+    margin: 10px 0 15px;
 }
 
 .register-container .button{
@@ -107,3 +93,61 @@ body{
    font-weight: 600;
    margin: 1px 36px;
 }
+
+/* .input-box-dropdown{
+    position: relative;
+    width: 80%;
+    height: 50px;
+    margin: 30px 25px;
+    border: 40px;
+} */
+
+/* .input-box-dropdown {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 15px 20px;
+} */
+
+
+.input-box-dropdown select {
+    width: 85%;
+    height: 50px;
+    margin: 1px 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 2);
+    border-radius: 50px;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 0px 10px;
+    -webkit-appearance: none; /* Remove default arrow for webkit browsers */
+    -moz-appearance: none; /* Remove default arrow for Firefox */
+    appearance: none; /* Remove default arrow for other browsers */
+    background-image: url('data:image/svg+xml,<svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Add custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 24px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* #gender{
+    color: black;
+} */
+
+.input-box-dropdown select option {
+    color: #000; /* Text color for the dropdown options */
+    background-color: #fff; /* Background color for the dropdown options */
+}
+
+.pass-icon{
+    width: 18px;
+    position: relative;
+    left: 267px;
+    top: -38.5px;
+    cursor: pointer;
+}
+
+

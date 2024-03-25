@@ -1,28 +1,31 @@
 .login-container{
-    width: 300px;
+    width:300px;
     margin: 10px auto;
-    padding: 14px 20px;
-    border: 1px solid #30b3db;
+    /* padding: 14px 20px; */
+    border: 1px solid rgba(255, 255, 255, 2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(173, 216, 230, 1);
     position: relative;
     border-radius: 10px;
     padding: 30px 40px;
-    background:transparent;
-    border: transparent;
+    
 }
 
 input[type="text"],
 input[type="password"],
 button{
-    width: 235px;
+    width: 230px;
     padding: 14px 20px;
+    position: relative;
     margin: 8px 0;
     border: 1px solid #30b3db;
     font-family: "Poppins",sans-serif;
     /* box-sizing: border-box; */
     border-radius: 40px;
-    background: #17667e;
+    background:#17667e;
     color: #fff;
     border: #30b3db;
+    
 }
 
 input[type="text"]::placeholder,
@@ -38,9 +41,9 @@ button{
     font-weight: 300px;
 }
 
-button:hover{
+/* button:hover{
     opacity: 0.8;
-}
+} */
 
 /* .cancelbtn{
     width: auto;
@@ -60,7 +63,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url("../image.png")no-repeat;
+    background: url("image.png")no-repeat;
     background-size: cover;
     background-position: center;
 
@@ -71,21 +74,21 @@ h1{
     text-align: center;
 }
 
-i.user-icon,
-i.lock-icon {
+i.user-icon {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    color: #30b3db;
+    right: 4%;
+    /* transform: translateY(-50%); */
+    color: #ffffff;
 }
 
-i.user-icon {
-    right: 10px; /* Adjusted right position for user icon */
-}
+/* i.user-icon { */
+    /* left: -10px; Adjusted right position for user icon */
+/* } */
 
-i.lock-icon {
-    right: 10px; /* Adjusted right position for lock icon */
-}
+/* i.lock-icon {
+    left: -10px; Adjusted right position for lock icon */
+/* } */
 
 .remember-forgot{
     display: flex;
@@ -114,4 +117,16 @@ i.lock-icon {
 
 .remember-forgot a:hover{
     text-decoration: underline;
+}
+
+input:focus {
+    border: 2px solid #30b3db;
+}
+
+.pass-icon{
+    width: 20px;
+    position: absolute;
+    top: 200px;
+    right: 45px;
+    cursor: pointer;
 }

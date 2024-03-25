@@ -13,17 +13,20 @@
             });
         });
     </script> -->
-    <link rel="stylesheet" type="text/css" href="./css/loginpage.css">
+    <link rel="stylesheet" type="text/css" href="loginpage.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="login-container">
-        <form action="./login_validate.php" method="post" onsubmit="return enableloginbutton()">
+        <form autocomplete="off" action="login_validate.php" method="post" novalidate onsubmit="return enableloginbutton()">
             <h1><b>Login</b></h1>
             <input type="text" id="username" name="username" placeholder="Username or Email" required>
             <i class='bx bxs-user'></i>
+
             <input type="password" id="password" name="password" placeholder="Password" required>
-            <i class='bx bxs-lock-alt'></i>
+            <img src="whiteeye.png" onclick="pass()" class="pass-icon" id="pass-icon">
+            <!-- <i class='bx bxs-lock-alt'></i> -->
+
             <button type="submit" id="login-button" >Login</button>
     
             <div class="remember-forgot">
@@ -35,17 +38,30 @@
             </div>
         </form>
     </div>
+    <script src="login_hideshow.js"></script>
     <script>
         function enableloginbutton(){
             var username = document.getElementById("username").value.trim();
             var password = document.getElementById("password").value.trim();
             var loginButton = document.getElementById("login-button");
 
-            // if(username !== "" && password !== ""){
-            //     loginButton.removeAttribute("disabled");
-            // }else{
-            //     loginButton.setAttribute("disabled","disabled");
-            // }
+            var usernameInput = document.getElementById("username");
+            var passwordInput = document.getElementById("password");
+
+            if(username === ""){
+                usernameInput.style.border = "2px solid red"; //Inline CSS
+                return false; // Prevent form submission
+            } else {
+                usernameInput.style.border = "1px solid #30b3db"; // Reset border
+            }
+
+            if(password === ""){
+                passwordInput.style.border = "2px solid red"; //Inline CSS
+                return false; // Prevent form submission
+            } else {
+                passwordInput.style.border = "1px solid #30b3db"; // Reset border
+            }
+
             return true;
     }
     </script>
