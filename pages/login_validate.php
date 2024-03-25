@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['isLoggedIn'] = true;
 $passwordErr = "";
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -28,7 +28,7 @@ if (!$conn) {
 // Check if the query was successful
 if($result){
      // Check if the username exists
-     if(mysqli_num_rows($result)>0){
+    if(mysqli_num_rows($result)>0){
         // Fetch the user's data
         $row = mysqli_fetch_assoc($result);
 
@@ -37,7 +37,8 @@ if($result){
              // Password is correct, redirect to the home page or dashboard
              $_SESSION['username'] = $username; // Store the username in session for further use
 
-            header("Location: home.html");
+            header('Location: main.php');
+            
             exit();
          }else{
             echo "<script>alert('Invalid password. Please try again.');</script>";
@@ -46,7 +47,8 @@ if($result){
             echo "User not found. Please register.";
             
         }
-    }else{
+    }
+    else{
         echo "Error".$sql."<br>".mysqli_error($conn);
     }
 mysqli_close($conn);

@@ -13,7 +13,7 @@
     <!-- inserting navbar component -->
     <div id="navbar"></div>
     <script>
-        fetch('../components/navbar/navbar.html')
+        fetch('../components/navbar/navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;

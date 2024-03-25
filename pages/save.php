@@ -43,7 +43,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     // Execute SQL statement
     if (mysqli_query($conn, $sql)) {
-    echo "Registration successful";
+    //  "Registration successful";
+    header("Location: loginform.html");
     } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

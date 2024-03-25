@@ -1,9 +1,21 @@
 <?php
 session_start();
-if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) {
+if (!isset($_SESSION['isLoggedIn'])) {
     header('Location: loginform.html');
     exit;
 }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "saidb";
+
+$conn = new mysqli($servername, $username, $password,$dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully<br>"; // Debugging message
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +33,7 @@ if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) {
     <!-- inserting navbar component -->
     <div id="navbar"></div>
     <script>
-        fetch('../components/navbar/navbar.html')
+        fetch('../components/navbar/navbar.php')
         .then(response => response.text())
         .then(data => {
         document.getElementById('navbar').innerHTML = data;
@@ -40,72 +52,62 @@ if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) {
                     <button><i class="bi bi-search"></i></button>
                 </form>
                 <div class="repo-source">
-                    <ul>
-                        <li class="user-source">
-                            <div class="repolist">
-                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
-                                <div class="reponame">
-                                    <a href="#">username / repository1</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user-source">
-                            <div class="repolist">
-                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
-                                <div class="reponame">
-                                    <a href="#">username / repository1</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user-source">
-                            <div class="repolist">
-                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
-                                <div class="reponame">
-                                    <a href="#">username / repository1wserdtfcgvthbjnm</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user-source">
-                            <div class="repolist">
-                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
-                                <div class="reponame">
-                                    <a href="#">repository1</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user-source">
-                            <div class="repolist">
-                                <a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>
-                                <div class="reponame">
-                                    <a href="#">repository1</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+    <ul>
+        <?php
+        // Select the database
+        if (!$conn->select_db($dbname)) {
+            die("Database selection failed: " . $conn->error);
+        }
 
-                <div class="repo-creation">
+        // Fetch Repository Names
+        $sql = "SELECT name FROM repositories";
+        $result = $conn->query($sql);
+
+        if ($result === FALSE) {
+            echo "Error fetching repository names: " . $conn->error;
+        } else {
+            while ($row = $result->fetch_assoc()) {
+                $repo_name = htmlspecialchars($row['name']);
+                echo '<li class="user-source">';
+                echo '<div class="repolist">';
+                echo '<a href="#" class="repo-pic"><img src="../components/images/profile.jpg" alt=""></a>';
+                echo '<div class="reponame">';
+                echo '<a href="#">' . $repo_name . '</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</li>';
+            }
+        }
+        ?>
+    </ul>
+</div>
+
+                <form action="">
+                    <div class="repo-creation">
                     <h3>Lets build a new project!</h3>
                     <a id="repo-btn" class="repo-btn" data-target="#login" data-toggle="modal">Create New Repo</a>
                 </div>
+                </form>
+                
 
                 <div class="popup-container" id="popupContainer">
                     <div class="popup">
                         <span class="close" onclick="closePopup()">&times;</span>
 
-                        <form id="repo-form">
-                            <h2>Create New Repository</h2>
-                            <label for="repo-name">Username:</label>
-                            <input type="text" disabled id="username" name="username" placeholder="alex">
+                        <form id="repo-form" method="post" action="create_repo.php">
+    <h2>Create New Repository</h2>
+    <label for="repo-name">Username:</label>
+    <input type="text" disabled id="username" name="username" placeholder="alex">
 
-                            <label for="repo-name">Repository Name:</label>
-                            <input type="text" id="repo-name" name="username">
-                            
-                            <label for="repo-desc">Description:</label>
-                            <textarea id="description" name="description" rows="4" cols="50"></textarea>
-            
-                            <input type="submit" id="repo-submit"  value="Create New Repo">
-                        </form>
+    <label for="repo-name">Repository Name:</label>
+    <input type="text" id="repo-name" name="repo_name" required>
+    
+    <label for="repo-desc">Description:</label>
+    <textarea id="description" name="repo_description" rows="4" cols="50" required></textarea>
+
+    <input type="submit" id="repo-submit" name="create_repo"  value="Create New Repo">
+</form>
+
                     </div>
                 </div>
 
@@ -116,7 +118,7 @@ if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) {
 
         <div class="main">
             <div class="about">
-                
+                    <h1>Welcome </h1>
                     <h2>Our Journey</h2>
                     <p>UnleashRobotics was founded with a vision to create an inclusive space for robotics enthusiasts of all backgrounds and skill levels...</p>           
                     <h2>Our Mission</h2>
