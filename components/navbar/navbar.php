@@ -18,7 +18,7 @@
       <div class="navdiv">
         <div class="content">
           <div class="logo">
-            <img src="robot.png" height="50px" width="55px">
+            <img src="../components/images/robot.png" height="50px" width="55px">
           </div>
           <nav role="navigation">
             <ul>
