@@ -4,7 +4,9 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 95vh;
-    background-color: seagreen;
+    background:url('img3.png') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .register-container{
@@ -20,7 +22,12 @@ body{
     box-sizing: border-box;
     font-family: "Poppins",sans-serif; */
     width: 370px;
-    background: purple;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px ;
+    /* rgba(0, 0, 0, 2); */
+    border-radius: 20px;
     color: #fff;
 }
 
@@ -34,6 +41,7 @@ body{
     width: 80%;
     height: 50px;
     margin: 30px 25px;
+    background: transparent;
 }
 
 .input-box-dropdown{
@@ -43,6 +51,7 @@ body{
     margin: 30px 25px;
     border: 40px;
 }
+
 
 .input-box input{
     width: 100%;
@@ -57,8 +66,20 @@ body{
     padding: 0px 10px 0px 10px ;
 }
 
+.input-box input:focus,
+.input-box input:-webkit-autofill {
+    background-color: transparent !important; /* Set background to transparent on focus and autofill */
+}
+
 .input-box input::placeholder {
-    color: #fff;
+    color:#fff;
+}
+
+.input-box input:focus::placeholder,
+.input-box input:-moz-placeholder,
+.input-box input::-moz-placeholder,
+.input-box input:-ms-input-placeholder {
+    color: rgba(173, 216, 230, 0.7); /* Adjust placeholder color on focus */
 }
 
 .input-box i{
@@ -77,9 +98,14 @@ body{
 }
 
 .register-container .button{
-   width: 100%;
+   width: 80%;
    height: 45px;
    border: none;
    outline: none;
    border-radius: 40px;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: 600;
+   margin: 1px 36px;
 }
+
