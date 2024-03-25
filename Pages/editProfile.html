@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotics</title>
-    <link rel="stylesheet" href="../components/Navbar/Navbar.css">
+    <link rel="stylesheet" href="../components/navbar/navbar.css">
     <link rel="stylesheet" href="css/editProfile.css">
     <link rel="icon" href="../components/images/icon.png">
 </head>
@@ -13,7 +13,7 @@
     <!-- inserting navbar component -->
     <div id="navbar"></div>
     <script>
-        fetch('../components/Navbar/Navbar.html')
+        fetch('../components/navbar/navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;

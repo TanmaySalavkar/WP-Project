@@ -1,19 +1,27 @@
+<?php
+session_start();
+if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) {
+    header('Location: loginform.html');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotics</title>
-    <link rel="stylesheet" href="../components/Navbar/Navbar.css">
+    <link rel="stylesheet" href="../components/navbar/navbar.css">
     <link rel="stylesheet" href="../components/Robot/robot.css">
-    <link rel="stylesheet" href="/Pages/css/main.css">
+    <link rel="stylesheet" href="../pages/css/main.css">
     <link rel="icon" href="../components/images/icon.png">
 </head>
 <body>
     <!-- inserting navbar component -->
     <div id="navbar"></div>
     <script>
-        fetch('../components/Navbar/Navbar.html')
+        fetch('../components/navbar/navbar.html')
         .then(response => response.text())
         .then(data => {
         document.getElementById('navbar').innerHTML = data;
@@ -190,7 +198,7 @@
         
     </main>     
 </div>
-<script src="/Pages/js/main.js"></script>
+<script src="./js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </body>
 </html>
