@@ -1,10 +1,13 @@
+<?php
+ session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Robotics</title>
-    <link rel="stylesheet" href="Navbar.css" />
+    <link rel="stylesheet" href="navbar.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
@@ -15,11 +18,11 @@
       <div class="navdiv">
         <div class="content">
           <div class="logo">
-            <a href="../index.html"><img src="/components/images/robot.png"></a>
+            <img src="robot.png" height="50px" width="55px">
           </div>
           <nav role="navigation">
             <ul>
-                <li><a href="../index.html" class="home-title">Dashboard</a></li>
+                <li><a href="#" class="home-title">Dashboard</a></li>
               </ul>
           </nav>
           
@@ -30,11 +33,11 @@
             <button><i class="bi bi-search"></i></button>
           </form>
           <div class="option-menu">
-            <div class="options" title="notifications">
-              <i class="bi bi-bell-fill"></i>
+            <div class="options" title="Logout" onclick="logout_func()">
+              <a href="./logout.php"><i class="bi bi-box-arrow-right"></i></a>
             </div>
             <div class="options" title="profile">
-                <a href="Pages/profile.html"><i class="bi bi-person-fill"></i></a>
+                <a href="./profile.html"><i class="bi bi-person-fill"></i></a>
             </div>
             <label class="switch">
               <input type="checkbox" id="checkbox">
@@ -48,3 +51,8 @@
     </nav>
   </body>
 </html>
+<?php
+ function logout_func(){
+  session_destroy();
+ }
+?>

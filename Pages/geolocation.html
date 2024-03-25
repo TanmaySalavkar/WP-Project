@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics Website</title>
+    <link rel="stylesheet" href="geolocation.css">
+</head>
+<body>
+    <h1>Robotics Website</h1>
+    <p>Find robotics events, workshops, and stores near you!</p>
+    <form id="locationForm">
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required>
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required>
+        <button type="submit">Find Location</button>
+    </form>
+    <button id="currentLocationBtn">Find My Current Location</button>
+    <div id="map"></div>
+
+    <script src="geolocation.js"></script>
+    <!-- Include the Google Maps API script with your API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ahcMNyRSDCXYCsj68rO_ci_62xWvTlY&libraries=places"></script>
+</body>
+</html>

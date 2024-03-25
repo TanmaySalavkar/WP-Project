@@ -38,9 +38,9 @@ button{
     font-weight: 300px;
 }
 
-/* button:hover{
+button:hover{
     opacity: 0.8;
-} */
+}
 
 /* .cancelbtn{
     width: auto;
@@ -60,7 +60,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url("image.png")no-repeat;
+    background: url("../image.png")no-repeat;
     background-size: cover;
     background-position: center;
 
@@ -73,7 +73,7 @@ h1{
 
 i.user-icon,
 i.lock-icon {
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: #30b3db;
